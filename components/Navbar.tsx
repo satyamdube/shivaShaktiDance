@@ -31,6 +31,11 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  // Close menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   const navLinks = [
     { name: "Home", href: "/", icon: Compass },
     { name: "Classes", href: "/classes", icon: Compass },
@@ -43,7 +48,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 w-full overflow-hidden ${
+      className={`sticky top-0 z-50 transition-all duration-300 w-full ${
         isScrolled
           ? "bg-maroon-950/95 backdrop-blur-md shadow-xl border-b border-gold-400/20"
           : "bg-maroon-950/90 backdrop-blur-sm border-b border-gold-400/15"
@@ -66,7 +71,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3.5">
         <div className="flex items-center justify-between gap-2">
           {/* Brand Logo */}
-          <Link href="/" className="inline-flex items-center shrink-0">
+          <Link href="/" className="inline-flex items-center shrink-0" onClick={() => setIsOpen(false)}>
             <BrandLogo size="md" />
           </Link>
 
@@ -105,14 +110,16 @@ export default function Navbar() {
           <div className="flex lg:hidden items-center gap-2 shrink-0">
             <Link
               href="/contact#enroll"
+              onClick={() => setIsOpen(false)}
               className="text-[11px] font-bold bg-gold-400 hover:bg-gold-300 text-maroon-950 px-3 py-1.5 rounded shadow whitespace-nowrap transition-colors"
             >
               Free Trial
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-cream-100 hover:text-gold-400 p-2 rounded-lg bg-white/5 border border-gold-400/20 focus:outline-none touch-manipulation min-w-[40px] min-h-[40px] flex items-center justify-center"
+              className="text-cream-100 hover:text-gold-400 p-2 rounded-lg bg-white/5 border border-gold-400/20 focus:outline-none touch-manipulation min-w-[40px] min-h-[40px] flex items-center justify-center cursor-pointer"
               aria-label="Toggle Navigation Menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X className="w-5 h-5 text-gold-400" /> : <Menu className="w-5 h-5 text-gold-400" />}
             </button>
@@ -120,9 +127,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Full-Screen Mobile Drawer with Backdrop */}
+      {/* Full-Screen Mobile Drawer */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-[88px] sm:top-[98px] z-50 bg-maroon-950/98 backdrop-blur-xl border-t border-gold-400/20 flex flex-col justify-between p-6 overflow-y-auto animate-in slide-in-from-top duration-300">
+        <div className="lg:hidden border-t border-gold-400/20 bg-maroon-950/98 backdrop-blur-2xl px-4 sm:px-6 py-5 flex flex-col justify-between overflow-y-auto h-[calc(100dvh-80px)] max-h-[calc(100dvh-80px)] shadow-2xl animate-slide-down">
           <div className="space-y-2">
             <div className="text-[10px] uppercase font-bold text-gold-400 tracking-widest px-3 mb-2">
               Academy Navigation
@@ -152,18 +159,18 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Drawer Bottom CTAs */}
-          <div className="pt-6 border-t border-gold-400/20 space-y-3">
+          <div className="pt-5 mt-4 border-t border-gold-400/20 space-y-3 pb-4">
             <Link
               href="/contact#enroll"
               onClick={() => setIsOpen(false)}
-              className="w-full text-center block bg-gradient-to-r from-gold-500 via-gold-400 to-gold-300 text-maroon-950 font-bold py-3.5 rounded-xl shadow-lg text-base"
+              className="w-full text-center block bg-gradient-to-r from-gold-500 via-gold-400 to-gold-300 hover:from-gold-400 hover:to-gold-200 text-maroon-950 font-bold py-3.5 rounded-xl shadow-lg text-sm transition-all"
             >
               Book Complimentary Trial Class
             </Link>
 
             <a
               href="tel:+919811024590"
-              className="w-full text-center flex items-center justify-center gap-2 bg-white/10 text-cream-100 font-semibold py-3 rounded-xl border border-gold-400/30 text-sm"
+              className="w-full text-center flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-cream-100 font-semibold py-3 rounded-xl border border-gold-400/30 text-xs transition-colors"
             >
               <Phone className="w-4 h-4 text-gold-400" />
               <span>Call Studio: +91 98110 24590</span>
