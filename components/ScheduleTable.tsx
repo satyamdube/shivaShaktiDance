@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { SCHEDULE_ITEMS, ScheduleItem } from "@/data/danceData";
-import { Calendar, Clock, User, CheckCircle, AlertCircle, LayoutGrid, List, MapPin, Sparkles, ArrowRight } from "lucide-react";
+import { Calendar, Clock, User, CheckCircle, AlertCircle, LayoutGrid, List, MapPin, Sparkles, ArrowRight, MessageCircle } from "lucide-react";
 
 export default function ScheduleTable() {
   const [selectedDay, setSelectedDay] = useState<"all" | "Weekdays (Tue & Thu)" | "Weekends (Sat & Sun)">("all");
@@ -146,13 +145,19 @@ export default function ScheduleTable() {
                     <User className="w-4 h-4 text-wine-700" />
                     <span className="font-medium">{item.instructor}</span>
                   </div>
-                  <Link
-                    href={`/contact?batch=${encodeURIComponent(item.className + " (" + item.day + " - " + item.time + ")")}#enroll`}
-                    className="font-bold text-wine-700 hover:text-maroon-950 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+                  <a
+                    href={`https://wa.me/919811024590?text=${encodeURIComponent(
+                      `Namaste! I would like to reserve a slot for ${item.className} (${item.day} - ${item.time}) at Shiv Shakti Dance Academy.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-wine-700 hover:text-emerald-700 inline-flex items-center gap-1.5 group-hover:translate-x-0.5 transition-all text-xs"
+                    title={`Reserve slot for ${item.className} on WhatsApp`}
                   >
+                    <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Reserve Slot</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
@@ -196,13 +201,19 @@ export default function ScheduleTable() {
                         </span>
                       </td>
                       <td className="px-6 py-4 text-right">
-                        <Link
-                          href={`/contact?batch=${encodeURIComponent(item.className + " (" + item.day + " - " + item.time + ")")}#enroll`}
-                          className="inline-flex items-center gap-1 text-xs font-bold bg-maroon-900 hover:bg-wine-700 text-gold-300 px-4 py-2 rounded-lg transition-colors"
+                        <a
+                          href={`https://wa.me/919811024590?text=${encodeURIComponent(
+                            `Namaste! I would like to reserve a slot for ${item.className} (${item.day} - ${item.time}) at Shiv Shakti Dance Academy.`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold bg-maroon-900 hover:bg-emerald-700 text-gold-300 hover:text-white px-3.5 py-2 rounded-lg transition-all shadow-sm"
+                          title={`Reserve slot for ${item.className} on WhatsApp`}
                         >
-                          <span>Reserve</span>
+                          <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                          <span>Reserve Slot</span>
                           <ArrowRight className="w-3 h-3" />
-                        </Link>
+                        </a>
                       </td>
                     </tr>
                   ))}

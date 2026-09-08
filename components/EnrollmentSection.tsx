@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Sparkles, Send, CheckCircle2, AlertCircle, Phone, Clock, ShieldCheck, Ticket, User, Calendar, MapPin } from "lucide-react";
+import { Sparkles, Send, CheckCircle2, AlertCircle, Phone, Clock, ShieldCheck, Ticket, User, Calendar, MapPin, MessageCircle } from "lucide-react";
 import TrishulLogo from "@/components/TrishulLogo";
 
 function EnrollmentFormContent() {
@@ -210,9 +210,20 @@ function EnrollmentFormContent() {
           </p>
 
           {status.type === "success" && (
-            <div className="mb-5 sm:mb-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 flex items-start gap-3 animate-fadeIn">
-              <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-              <div className="text-sm font-medium">{status.message}</div>
+            <div className="mb-5 sm:mb-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 flex flex-col gap-2.5 animate-fadeIn">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                <div className="text-sm font-medium">{status.message}</div>
+              </div>
+              <a
+                href="https://wa.me/919811024590?text=Namaste%20Shiv%20Shakti%20Dance%20Academy%2C%20I%20just%20submitted%20my%20trial%20slot%20reservation!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 self-start ml-8 text-xs font-bold text-emerald-300 hover:text-emerald-100 bg-emerald-900/60 border border-emerald-400/40 px-3 py-1.5 rounded-lg transition-colors"
+              >
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Chat with Coordinator on WhatsApp Now</span>
+              </a>
             </div>
           )}
 
@@ -345,6 +356,20 @@ function EnrollmentFormContent() {
                 </>
               )}
             </button>
+
+            <div className="pt-2 text-center">
+              <a
+                href={`https://wa.me/919811024590?text=${encodeURIComponent(
+                  `Namaste Shiv Shakti Dance Academy! I would like to reserve a trial slot for ${formData.danceClass || "Dance Class"} (${formData.batchPreference || "Preferred Batch"}).`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-emerald-300 hover:text-emerald-200 transition-colors py-1.5 px-3 rounded-lg hover:bg-white/5 border border-emerald-500/30 w-full"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <span>Or Reserve Slot Directly on WhatsApp</span>
+              </a>
+            </div>
           </form>
         </div>
       </div>
