@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shiv Shakti Dance Academy — Where Devotion Meets Expression</title>
+<meta name="description" content="Shiv Shakti Dance Academy, New Delhi — Bharatanatyam, Bollywood & Semi-Classical, and Kids' Dance classes. Where devotion meets expression.">
+<link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon-950:#26050f;
+    --maroon-900:#380a1c;
+    --maroon-850:#450e23;
+    --wine-700:#6b1636;
+    --wine-600:#7e1c40;
+    --gold-600:#a9821f;
+    --gold-500:#c9a227;
+    --gold-400:#e2bd53;
+    --gold-300:#f0d789;
+    --cream-100:#fbf3e4;
+    --cream-50:#fdf9f0;
+    --ink:#2a0a14;
+    --line:rgba(226,189,83,0.32);
+    --line-soft:rgba(226,189,83,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins', sans-serif;
+    color:var(--ink);
+    background:var(--cream-50);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1200px; margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    font-family:'Poppins', sans-serif;
+    font-size:12.5px;
+    font-weight:500;
+    letter-spacing:0.18em;
+    color:var(--gold-500);
+    display:inline-flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--gold-500);}
+  .section-head .eyebrow{justify-content:center;}
+  .section-head .eyebrow::after{content:""; width:22px; height:1px; background:var(--gold-500);}
+
+  ::selection{background:var(--gold-400); color:var(--maroon-950);}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity 0.7s ease, transform 0.7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(38,5,15,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px;
+  }
+  .brand{display:flex; align-items:center; gap:14px; text-decoration:none;}
+  .brand-logo-icon{width:46px; height:55px; flex-shrink:0;}
+  .brand-text{display:flex; flex-direction:column; line-height:1;}
+  .brand-text .name{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    color:#e5ba45;
+    font-size:24px; font-weight:700; line-height:1.05;
+    letter-spacing:0.02em;
+  }
+  .brand-text .sub{
+    color:#ffffff;
+    font-size:10.5px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase;
+    margin-top:4px;
+  }
+  .brand-text .tagline{
+    font-family:'Alex Brush', cursive, Georgia, serif;
+    color:rgba(253,249,240,0.9);
+    font-size:14px; font-weight:400; font-style:italic;
+    margin-top:3px;
+  }
+  nav.links{display:flex; align-items:center; gap:34px;}
+  nav.links a{
+    position:relative;
+    color:var(--cream-100); font-size:14px; font-weight:400; opacity:0.82;
+    padding:8px 0;
+  }
+  nav.links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--gold-400); transform:scaleX(0); transform-origin:left;
+    transition:transform 0.25s ease;
+  }
+  nav.links a:hover{opacity:1;}
+  nav.links a:hover::after{transform:scaleX(1);}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Poppins', sans-serif; font-size:13.5px; font-weight:500;
+    padding:12px 26px; border-radius:2px; cursor:pointer;
+    border:1px solid var(--gold-500);
+    transition:background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-gold{background:var(--gold-500); color:var(--maroon-950); border-color:var(--gold-500);}
+  .btn-gold:hover{background:var(--gold-400);}
+  .btn-outline{background:transparent; color:var(--cream-100); border-color:var(--gold-400);}
+  .btn-outline:hover{background:rgba(226,189,83,0.12);}
+  .btn-dark{background:var(--maroon-950); color:var(--cream-100); border-color:var(--maroon-950);}
+  .btn-dark:hover{background:var(--wine-700); border-color:var(--wine-700);}
+  .menu-toggle{display:none; background:none; border:0; color:var(--cream-100); font-size:26px; cursor:pointer;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    background:var(--maroon-950);
+    color:var(--cream-100);
+    min-height:92vh;
+    display:flex; align-items:center;
+    padding:60px 0 0;
+  }
+  .hero-bg{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(100deg, var(--maroon-950) 32%, rgba(38,5,15,0.72) 55%, rgba(38,5,15,0.28) 100%),
+      url('https://images.pexels.com/photos/31880387/pexels-photo-31880387.jpeg?auto=compress&cs=tinysrgb&w=1600') center 18%/cover;
+  }
+  .hero-bg::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-radial-gradient(circle at 10% 90%, rgba(226,189,83,0.05) 0 2px, transparent 2px 48px);
+  }
+  .hero-inner{position:relative; z-index:2; width:100%;}
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; align-items:center; gap:40px;
+  }
+  .hero-copy .eyebrow{margin-bottom:22px;}
+  .hero-copy h1{
+    font-size:64px; line-height:1.04; font-weight:600; color:var(--cream-100);
+    margin-bottom:24px;
+    text-shadow:0 2px 30px rgba(0,0,0,0.25);
+  }
+  .hero-copy h1 em{
+    font-style:italic; color:var(--gold-400); font-weight:600;
+  }
+  .hero-copy p{
+    font-size:16.5px; color:rgba(251,243,228,0.82); max-width:430px; margin-bottom:36px;
+  }
+  .hero-actions{display:flex; gap:18px; align-items:center; flex-wrap:wrap;}
+  .hero-stats{
+    display:flex; gap:36px; margin-top:56px; padding-top:32px; border-top:1px solid var(--line-soft);
+    max-width:480px;
+  }
+  .hero-stats div{}
+  .hero-stats .num{font-family:'Cormorant Garamond', serif; font-size:32px; color:var(--gold-400); font-weight:600;}
+  .hero-stats .lbl{font-size:12px; color:rgba(251,243,228,0.62); margin-top:2px;}
+
+  .hero-card{
+    position:relative; margin-left:auto; max-width:300px;
+  }
+  .hero-card-frame{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:4px 4px 130px 130px;
+    padding:10px;
+  }
+  .hero-card-frame::before{
+    content:""; position:absolute; inset:-10px;
+    border:1px solid var(--line-soft); border-radius:4px 4px 150px 150px;
+    pointer-events:none;
+  }
+  .hero-card-img{
+    width:100%; aspect-ratio:3/4.6;
+    background:linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(38,5,15,0.55) 100%),
+      url('https://images.pexels.com/photos/30424952/pexels-photo-30424952.jpeg?auto=compress&cs=tinysrgb&w=800') center 20%/cover;
+    border-radius:2px 2px 120px 120px;
+  }
+  .hero-quote{
+    position:absolute; left:-56px; bottom:-30px; width:210px;
+    background:var(--cream-100); color:var(--maroon-950);
+    padding:20px 22px; border-radius:6px;
+    box-shadow:0 24px 50px rgba(0,0,0,0.35);
+  }
+  .hero-quote .stars{color:var(--gold-500); font-size:13px; letter-spacing:2px; margin-bottom:8px;}
+  .hero-quote p{font-size:12.5px; color:#4a3a3e; line-height:1.5; margin:0;}
+  .hero-emblem{
+    position:absolute; right:6%; top:14%; width:130px; height:130px;
+    opacity:0.55;
+  }
+
+  .scroll-cue{
+    position:absolute; left:50%; bottom:26px; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    color:rgba(251,243,228,0.5); font-size:10.5px; letter-spacing:0.18em; z-index:2;
+  }
+  .scroll-cue .line{width:1px; height:34px; background:linear-gradient(var(--gold-400), transparent); animation:cue 1.8s ease-in-out infinite;}
+  @keyframes cue{0%{transform:scaleY(0.3); opacity:0.4;} 50%{transform:scaleY(1); opacity:1;} 100%{transform:scaleY(0.3); opacity:0.4;}}
+
+  .strip{
+    position:relative; z-index:1;
+    background:var(--maroon-900);
+    border-top:1px solid var(--line-soft);
+  }
+  .strip-grid{
+    display:grid; grid-template-columns:repeat(4,1fr);
+  }
+  .strip-item{
+    padding:28px 22px;
+    border-right:1px solid var(--line-soft);
+    text-align:center;
+    color:var(--cream-100);
+    transition:background 0.25s ease;
+  }
+  .strip-item:hover{background:rgba(226,189,83,0.05);}
+  .strip-item:last-child{border-right:none;}
+  .strip-item svg{width:26px; height:26px; margin:0 auto 10px; display:block; color:var(--gold-400);}
+  .strip-item .t{font-size:14.5px; font-weight:500; margin-bottom:3px;}
+  .strip-item .s{font-size:12px; color:rgba(251,243,228,0.58);}
+
+  /* ---------- section shell ---------- */
+  section{padding:110px 0; position:relative;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 60px;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{font-size:42px; color:var(--maroon-900); line-height:1.15;}
+  .section-head p{color:#6b5a5f; font-size:15px; margin-top:14px;}
+
+  .divider{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    margin:0 auto 44px; color:var(--gold-500);
+  }
+  .divider svg{width:22px; height:22px;}
+  .divider .l, .divider .r{width:60px; height:1px; background:linear-gradient(90deg, transparent, var(--gold-500));}
+  .divider .r{background:linear-gradient(90deg, var(--gold-500), transparent);}
+
+  /* ---------- classes ---------- */
+  #classes{background:var(--cream-50);}
+  .classes-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+  }
+  .class-card{
+    position:relative;
+    border-radius:8px;
+    overflow:hidden;
+    aspect-ratio:3/4;
+    box-shadow:0 14px 34px rgba(42,7,19,0.1);
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .class-card:hover{transform:translateY(-6px); box-shadow:0 26px 50px rgba(42,7,19,0.2);}
+  .class-media{
+    position:absolute; inset:0;
+    background-size:cover; background-position:center;
+    transition:transform 0.5s ease;
+  }
+  .class-card:hover .class-media{transform:scale(1.06);}
+  .class-card::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(38,5,15,0.05) 30%, rgba(38,5,15,0.92) 100%);
+  }
+  .class-num{
+    position:absolute; top:16px; right:18px; z-index:2;
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:15px;
+    color:var(--gold-300); opacity:0.85;
+  }
+  .class-body{position:absolute; left:0; right:0; bottom:0; z-index:2; padding:24px 22px;}
+  .class-body h3{font-size:22px; color:var(--cream-100); margin-bottom:6px;}
+  .class-body p{font-size:12.5px; color:rgba(251,243,228,0.72); max-width:220px;}
+  .class-body .tag{
+    display:inline-block; margin-top:14px; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold-400); border-top:1px solid var(--line-soft); padding-top:12px; width:100%;
+  }
+
+  /* ---------- gallery ---------- */
+  .gallery{padding-top:0; padding-bottom:0;}
+  .gallery-grid{
+    display:grid; grid-template-columns:1.35fr 1fr 1fr; grid-template-rows:1fr 1fr; gap:6px; height:460px;
+  }
+  .gallery-grid a{
+    display:block; overflow:hidden; position:relative;
+    background-size:cover; background-position:center;
+  }
+  .gallery-grid a img.g-img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform 0.5s ease;
+  }
+  .gallery-grid a:hover img.g-img{transform:scale(1.08);}
+  .gallery-grid a:first-child{grid-row:1 / 3;}
+  .gallery-grid a::before{
+    content:""; position:absolute; inset:0; z-index:1;
+    box-shadow:inset 0 0 0 1px rgba(226,189,83,0.25);
+    background:linear-gradient(180deg, rgba(38,5,15,0) 60%, rgba(38,5,15,0.55) 100%);
+    opacity:0; transition:opacity 0.3s ease;
+  }
+  .gallery-grid a:hover::before{opacity:1;}
+
+  /* ---------- focus ---------- */
+  .focus{background:var(--maroon-950); color:var(--cream-100); overflow:hidden;}
+  .focus::before{
+    content:""; position:absolute; inset:0;
+    background-image:repeating-radial-gradient(circle at 90% 10%, rgba(226,189,83,0.04) 0 2px, transparent 2px 50px);
+  }
+  .focus .wrap{position:relative;}
+  .focus .section-head h2{color:var(--cream-100);}
+  .focus .section-head p{color:rgba(251,243,228,0.65);}
+  .focus-grid{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:18px;
+  }
+  .focus-item{
+    text-align:center; padding:30px 16px;
+    border:1px solid var(--line-soft); border-radius:8px;
+    background:rgba(226,189,83,0.03);
+    transition:border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  }
+  .focus-item:hover{border-color:var(--line); background:rgba(226,189,83,0.07); transform:translateY(-4px);}
+  .focus-item svg{width:30px; height:30px; margin:0 auto 16px; color:var(--gold-400);}
+  .focus-item .t{font-size:13.5px; font-weight:500;}
+
+  /* ---------- about ---------- */
+  .about{
+    position:relative;
+    background:
+      linear-gradient(100deg, var(--cream-100) 44%, rgba(251,243,228,0.9) 58%, rgba(251,243,228,0.35) 100%),
+      url('https://images.pexels.com/photos/7872076/pexels-photo-7872076.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+  }
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
+  }
+  .about-copy .eyebrow{margin-bottom:14px;}
+  .about-copy h2{font-size:38px; color:var(--maroon-900); margin-bottom:20px; line-height:1.2;}
+  .about-copy p{color:#5c4b4f; font-size:15px; margin-bottom:16px; max-width:470px;}
+  .about-list{list-style:none; margin-top:24px;}
+  .about-list li{
+    display:flex; align-items:flex-start; gap:12px; font-size:14px; color:#4a3a3e;
+    margin-bottom:12px;
+  }
+  .about-list svg{width:16px; height:16px; margin-top:3px; flex-shrink:0; color:var(--wine-700);}
+
+  .about-media{position:relative; display:flex; justify-content:center;}
+  .about-photos{position:relative; width:100%; max-width:380px; height:420px;}
+  .about-photo-main{
+    position:absolute; top:0; left:0; width:78%; height:82%;
+    background:url('https://images.pexels.com/photos/33638423/pexels-photo-33638423.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+    border-radius:6px; box-shadow:0 26px 50px rgba(42,7,19,0.2);
+  }
+  .guru-card{
+    position:absolute; right:-8px; bottom:-8px; width:230px;
+    background:var(--maroon-950); border-radius:8px; padding:24px 22px;
+    text-align:center; color:var(--cream-100);
+    border:1px solid var(--line); box-shadow:0 24px 50px rgba(0,0,0,0.3);
+  }
+  .guru-avatar{
+    width:66px; height:66px; border-radius:50%; margin:0 auto 12px;
+    background:linear-gradient(150deg, var(--gold-400), var(--wine-700));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond', serif; font-size:22px; font-weight:600;
+    color:var(--maroon-950);
+    border:2px solid var(--gold-400);
+  }
+  .guru-card .role{font-size:10px; letter-spacing:0.12em; color:var(--gold-400); text-transform:uppercase; margin-bottom:6px;}
+  .guru-card .name{font-family:'Cormorant Garamond', serif; font-size:21px; font-style:italic; margin-bottom:6px;}
+  .guru-card p{font-size:11.5px; color:rgba(251,243,228,0.68); line-height:1.5;}
+
+  /* ---------- testimonials ---------- */
+  .testimonials{background:var(--cream-100);}
+  .t-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .t-card{
+    background:var(--cream-50); border:1px solid rgba(107,20,51,0.12); border-radius:8px;
+    padding:30px 26px; position:relative;
+  }
+  .t-card .quote-mark{
+    font-family:'Cormorant Garamond', serif; font-size:52px; color:var(--gold-400); line-height:0.5;
+    display:block; margin-bottom:18px;
+  }
+  .t-card p{font-size:14px; color:#4a3a3e; margin-bottom:22px; min-height:96px;}
+  .t-person{display:flex; align-items:center; gap:12px;}
+  .t-avatar{
+    width:40px; height:40px; border-radius:50%;
+    background:linear-gradient(150deg, var(--gold-400), var(--wine-700));
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:500; color:var(--maroon-950);
+  }
+  .t-person .name{font-size:13.5px; font-weight:500; color:var(--maroon-900);}
+  .t-person .role{font-size:11.5px; color:#8a7a7e;}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--maroon-950); color:var(--cream-100); overflow:hidden;}
+  .contact::before{
+    content:""; position:absolute; inset:0;
+    background-image:repeating-radial-gradient(circle at 8% 92%, rgba(226,189,83,0.05) 0 2px, transparent 2px 48px);
+  }
+  .contact .wrap{position:relative;}
+  .contact-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-bottom:60px;
+  }
+  .contact-card{
+    border:1px solid var(--line-soft); border-radius:8px; padding:28px 24px;
+    transition:border-color 0.25s ease, background 0.25s ease;
+  }
+  .contact-card:hover{border-color:var(--line); background:rgba(226,189,83,0.04);}
+  .contact-card svg{width:22px; height:22px; color:var(--gold-400); margin-bottom:16px;}
+  .contact-card .k{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-400); margin-bottom:8px;}
+  .contact-card .v{font-size:14.5px; color:var(--cream-100);}
+  .contact-cta{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;
+    border-top:1px solid var(--line-soft); padding-top:44px;
+  }
+  .contact-cta h3{font-size:30px; max-width:480px; line-height:1.25;}
+  .social{display:flex; gap:12px;}
+  .social a{
+    width:40px; height:40px; border:1px solid var(--gold-400); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    transition:background 0.2s ease;
+  }
+  .social a:hover{background:rgba(226,189,83,0.15);}
+  .social svg{width:16px; height:16px; color:var(--gold-400);}
+
+  footer{
+    background:var(--maroon-950); border-top:1px solid var(--line-soft);
+    padding:22px 0; text-align:center;
+  }
+  footer p{font-size:12.5px; color:rgba(251,243,228,0.5);}
+
+  .whatsapp-fab{
+    position:fixed; right:24px; bottom:24px; z-index:200;
+    width:56px; height:56px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.35);
+    transition:transform 0.2s ease;
+  }
+  .whatsapp-fab:hover{transform:scale(1.08);}
+  .whatsapp-fab svg{width:26px; height:26px; color:#fff;}
+
+  .call-fab{
+    position:fixed; left:24px; bottom:24px; z-index:200;
+    width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg, #f0d789, #e2bd53, #c9a227);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px rgba(0,0,0,0.35);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    border:2px solid #fff;
+    color:#26050f;
+  }
+  .call-fab:hover{transform:scale(1.08); box-shadow:0 12px 30px rgba(226,189,83,0.5);}
+  .call-fab svg{width:24px; height:24px; stroke:#26050f; fill:none; stroke-width:2.2;}
+
+  @media (max-width:1000px){
+    .hero-copy h1{font-size:52px;}
+    .hero-quote{display:none;}
+  }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-card{margin:0 auto; max-width:240px; order:-1;}
+    .hero{min-height:auto; padding-top:48px;}
+    .hero-stats{max-width:none;}
+    .gallery-grid{grid-template-columns:1fr 1fr; grid-template-rows:auto; height:auto;}
+    .gallery-grid a{height:170px;}
+    .gallery-grid a:first-child{grid-row:auto; grid-column:1 / 3; height:230px;}
+    .strip-grid{grid-template-columns:repeat(2,1fr);}
+    .strip-item{border-bottom:1px solid var(--line-soft);}
+    .strip-item:nth-child(2n){border-right:none;}
+    .classes-grid{grid-template-columns:repeat(2,1fr);}
+    .focus-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr; gap:80px;}
+    .about-media{order:-1;}
+    .t-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:repeat(2,1fr);}
+    nav.links{display:none;}
+    nav.links.open{
+      display:flex;
+      position:absolute; top:100%; left:0; right:0;
+      background:rgba(38,5,15,0.98);
+      flex-direction:column; padding:20px 24px; gap:16px;
+      border-bottom:1px solid var(--line);
+      box-shadow:0 12px 24px rgba(0,0,0,0.5);
+    }
+    .menu-toggle{display:block;}
+    .nav > .btn{display:none;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 16px;}
+    .nav{padding:12px 16px;}
+    .brand-logo-icon{width:36px; height:44px;}
+    .brand-text .name{font-size:20px;}
+    .brand-text .sub{font-size:8.5px;}
+    .brand-text .tagline{font-size:12px;}
+    .hero-copy h1{font-size:36px;}
+    .hero-copy p{max-width:none;}
+    section{padding:56px 0;}
+    .classes-grid{grid-template-columns:1fr;}
+    .class-card{aspect-ratio:4/3;}
+    .focus-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .hero-actions{flex-direction:column; align-items:stretch;}
+    .section-head h2{font-size:30px;}
+    .about-photos{height:300px;}
+    .guru-card{position:static; margin-top:16px; width:100%;}
+    .call-fab{width:48px; height:48px; left:16px; bottom:16px;}
+    .call-fab svg{width:20px; height:20px;}
+    .whatsapp-fab{width:48px; height:48px; right:16px; bottom:16px;}
+    .whatsapp-fab svg{width:22px; height:22px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <a href="#home" class="brand">
+      <svg class="brand-logo-icon" viewBox="0 0 100 120" fill="none">
+        <defs>
+          <linearGradient id="hdrTrishulGold" x1="15%" y1="0%" x2="85%" y2="100%">
+            <stop offset="0%" stop-color="#fffce8" />
+            <stop offset="25%" stop-color="#f8df8c" />
+            <stop offset="50%" stop-color="#e5ba45" />
+            <stop offset="75%" stop-color="#c59220" />
+            <stop offset="100%" stop-color="#8a5a04" />
+          </linearGradient>
+          <linearGradient id="hdrTrishulHi" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="40%" stop-color="#ffec99" />
+            <stop offset="100%" stop-color="#dca42b" />
+          </linearGradient>
+        </defs>
+        <path d="M 50,5 C 52,14 55.5,23 57.5,31 C 59,37 56.5,43 54,47 L 46,47 C 43.5,43 41,37 42.5,31 C 44.5,23 48,14 50,5 Z" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.6" />
+        <path d="M 50,15 C 52.5,21 53.5,27 52,33 C 51,37 49,37 48,33 C 46.5,27 47.5,21 50,15 Z" fill="#26050f" stroke="url(#hdrTrishulGold)" stroke-width="1.2" />
+        <path d="M 50,20 C 51.2,23.5 51.5,26.5 50.8,29 C 50.3,31 49.7,31 49.2,29 C 48.5,26.5 48.8,23.5 50,20 Z" fill="url(#hdrTrishulHi)" />
+        <path d="M 23,12 C 25,18 25,24 23.5,31 C 21.5,39 16,45 20,53 C 23.5,58 31,56 39,50 L 43,47 C 36,44 29,42 27,37 C 24.5,31 25.5,23 27,17 C 27.8,14 28,11.5 28.5,8 C 26,9 24,10.5 23,12 Z" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.6" />
+        <path d="M 23,12 C 17,20 12,32 15,44 C 17,52 23,57 32,57 C 38,57 43,51 45,47 C 41,51 35,53 29,51 C 22,48 18,41 18,33 C 18,24 21,17 23,12 Z" fill="url(#hdrTrishulHi)" opacity="0.85" />
+        <path d="M 77,12 C 75,18 75,24 76.5,31 C 78.5,39 84,45 80,53 C 76.5,58 69,56 61,50 L 57,47 C 64,44 71,42 73,37 C 75.5,31 74.5,23 73,17 C 72.2,14 72,11.5 71.5,8 C 74,9 76,10.5 77,12 Z" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.6" />
+        <path d="M 77,12 C 83,20 88,32 85,44 C 83,52 77,57 68,57 C 62,57 57,51 55,47 C 59,51 65,53 71,51 C 78,48 82,41 82,33 C 82,24 79,17 77,12 Z" fill="url(#hdrTrishulHi)" opacity="0.85" />
+        <path d="M 37,47 C 41,45 59,45 63,47 C 64,49 63,52 61,53 C 57,54 43,54 39,53 C 37,52 36,49 37,47 Z" fill="url(#hdrTrishulHi)" stroke="#8a5a04" stroke-width="0.8" />
+        <rect x="47" y="52" width="6" height="24" rx="1" fill="url(#hdrTrishulGold)" stroke="#8a5a04" stroke-width="0.6" />
+        <circle cx="34" cy="63" r="8" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.8" />
+        <circle cx="34" cy="63" r="4.2" fill="#26050f" stroke="url(#hdrTrishulGold)" stroke-width="1.2" />
+        <path d="M 40,60 L 47,60 L 47,66 L 40,66 Z" fill="url(#hdrTrishulGold)" />
+        <circle cx="66" cy="63" r="8" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.8" />
+        <circle cx="66" cy="63" r="4.2" fill="#26050f" stroke="url(#hdrTrishulGold)" stroke-width="1.2" />
+        <path d="M 60,60 L 53,60 L 53,66 L 60,66 Z" fill="url(#hdrTrishulGold)" />
+        <rect x="44" y="74" width="12" height="4" rx="1.5" fill="url(#hdrTrishulHi)" stroke="#8a5a04" stroke-width="0.6" />
+        <circle cx="50" cy="84" r="4.5" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.6" />
+        <circle cx="41" cy="84" r="4" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.6" />
+        <circle cx="59" cy="84" r="4" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.6" />
+        <circle cx="45.5" cy="93" r="4.2" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.6" />
+        <circle cx="54.5" cy="93" r="4.2" fill="url(#hdrTrishulGold)" stroke="#ffe699" stroke-width="0.6" />
+        <circle cx="50" cy="102" r="4.5" fill="url(#hdrTrishulHi)" stroke="#ffe699" stroke-width="0.7" />
+        <circle cx="50" cy="103" r="0.9" fill="#fff" />
+        <polygon points="50,108 52,112 48,112" fill="url(#hdrTrishulGold)" />
+        <circle cx="50" cy="114" r="1.5" fill="url(#hdrTrishulHi)" />
+      </svg>
+      <div class="brand-text">
+        <div class="name">Shiv Shakti</div>
+        <div class="sub">DANCE ACADEMY</div>
+        <div class="tagline">Where Devotion Meets Expression</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#focus">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-gold">Enroll now</a>
+    <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <svg class="hero-emblem" viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="46" stroke="#c9a227" stroke-width="1"/>
+    <circle cx="50" cy="50" r="36" stroke="#c9a227" stroke-width="0.6" stroke-dasharray="2 4"/>
+    <circle cx="50" cy="50" r="4" fill="#c9a227"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div class="hero-copy reveal in">
+        <span class="eyebrow">Bharatanatyam &middot; Bollywood &middot; Kids &amp; Adults</span>
+        <h1>Where devotion<br>meets <em>expression</em></h1>
+        <p>Experience the divine blend of discipline, dedication and dance — for children, teens and adults, in the heart of New Delhi.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-gold">Enroll now</a>
+          <a href="#classes" class="btn btn-outline">View classes</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="num">12+</div><div class="lbl">Years teaching</div></div>
+          <div><div class="num">300+</div><div class="lbl">Students trained</div></div>
+          <div><div class="num">4</div><div class="lbl">Dance styles</div></div>
+        </div>
+      </div>
+      <div class="hero-card reveal in">
+        <div class="hero-card-frame">
+          <div class="hero-card-img"></div>
+        </div>
+        <div class="hero-quote">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"My daughter found grace, discipline and real joy here. Guru ji's teaching is unmatched."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-grid">
+      <div class="strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z"/></svg>
+        <div class="t">Expert trainers</div>
+        <div class="s">Qualified &amp; experienced</div>
+      </div>
+      <div class="strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/></svg>
+        <div class="t">Personal attention</div>
+        <div class="s">Small batch classes</div>
+      </div>
+      <div class="strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v10H4z"/><path d="M9 19h6M12 14v5"/></svg>
+        <div class="t">Stage opportunities</div>
+        <div class="s">Perform &amp; grow</div>
+      </div>
+      <div class="strip-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.35-9.5-8.5C.7 8.9 2.9 5 6.6 5c2 0 3.4 1.1 4.4 2.6C12 6.1 13.4 5 15.4 5c3.7 0 5.9 3.9 4.1 7.5C19 16.65 12 21 12 21z"/></svg>
+        <div class="t">Holistic development</div>
+        <div class="s">Art, culture &amp; confidence</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="classes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our classes</span>
+      <h2>For kids, teens and adults</h2>
+      <p>From the temple traditions of Bharatanatyam to energetic Bollywood, choose the style that fits your journey.</p>
+    </div>
+    <div class="classes-grid">
+      <div class="class-card reveal">
+        <div class="class-media" style="background-image:url('https://images.pexels.com/photos/30424952/pexels-photo-30424952.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
+        <span class="class-num">01</span>
+        <div class="class-body">
+          <h3>Bharatanatyam</h3>
+          <p>A classical South Indian dance form built on devotion, precision and storytelling.</p>
+          <span class="tag">Beginner to advanced</span>
+        </div>
+      </div>
+      <div class="class-card reveal">
+        <div class="class-media" style="background-image:url('https://images.pexels.com/photos/33638423/pexels-photo-33638423.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
+        <span class="class-num">02</span>
+        <div class="class-body">
+          <h3>Bollywood &amp; semi-classical</h3>
+          <p>Fun, energetic choreography that blends contemporary flair with classical roots.</p>
+          <span class="tag">Fun &amp; expressive</span>
+        </div>
+      </div>
+      <div class="class-card reveal">
+        <div class="class-media" style="background-image:url('https://images.pexels.com/photos/30481580/pexels-photo-30481580.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
+        <span class="class-num">03</span>
+        <div class="class-body">
+          <h3>Kids dance classes</h3>
+          <p>Specially designed lessons that build rhythm, confidence and stage presence early.</p>
+          <span class="tag">Ages 5&ndash;12</span>
+        </div>
+      </div>
+      <div class="class-card reveal">
+        <div class="class-media" style="background-image:url('https://images.pexels.com/photos/33638418/pexels-photo-33638418.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
+        <span class="class-num">04</span>
+        <div class="class-body">
+          <h3>Workshops &amp; special training</h3>
+          <p>Themed workshops and master classes for focused, intensive skill-building.</p>
+          <span class="tag">Seasonal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gallery-grid">
+      <a href="#gallery" aria-label="Dancer by the riverfront"><img class="g-img" src="https://images.pexels.com/photos/31880365/pexels-photo-31880365.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dancer by riverfront"></a>
+      <a href="#gallery" aria-label="Dancer in traditional Kerala dress"><img class="g-img" src="https://images.pexels.com/photos/16715886/pexels-photo-16715886.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dancer in Kerala dress"></a>
+      <a href="#gallery" aria-label="Odissi dance on the beach"><img class="g-img" src="https://images.pexels.com/photos/14106726/pexels-photo-14106726.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Odissi dance"></a>
+      <a href="#gallery" aria-label="Dancer performing outdoors in Kerala"><img class="g-img" src="https://images.pexels.com/photos/30481577/pexels-photo-30481577.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dancer outdoors"></a>
+      <a href="#gallery" aria-label="Dancer with graceful hand gestures"><img class="g-img" src="https://images.pexels.com/photos/33638415/pexels-photo-33638415.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dancer hand gestures"></a>
+    </div>
+  </div>
+</section>
+
+<section class="focus" id="focus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we focus on</span>
+      <h2>Dance is not just an art — it's a way of life</h2>
+      <p>We nurture talent, build confidence and connect students with India's rich cultural heritage.</p>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/></svg>
+        <div class="t">Expert trainers &amp; mentors</div>
+      </div>
+      <div class="focus-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.35-9.5-8.5C.7 8.9 2.9 5 6.6 5c2 0 3.4 1.1 4.4 2.6C12 6.1 13.4 5 15.4 5c3.7 0 5.9 3.9 4.1 7.5C19 16.65 12 21 12 21z"/></svg>
+        <div class="t">Personal attention</div>
+      </div>
+      <div class="focus-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 2.5-5 6-5s6 2 6 5M10 20c0-3 2.5-5 6-5s6 2 6 5"/></svg>
+        <div class="t">Small batches</div>
+      </div>
+      <div class="focus-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5a2 2 0 0 1 2-2h12a1 1 0 0 1 1 1v14"/><path d="M4 19h13a2 2 0 0 0 2-2"/></svg>
+        <div class="t">Discipline &amp; confidence</div>
+      </div>
+      <div class="focus-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z"/></svg>
+        <div class="t">Overall personality development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="eyebrow">About the academy</span>
+      <h2>Preserving heritage, inspiring expression</h2>
+      <p>At Shiv Shakti Dance Academy, we aim to preserve and promote India's rich dance heritage while inspiring creativity, discipline and self-expression in every student.</p>
+      <p>Our mission is to build confidence and bring out the best in every dancer — through the divine art of movement.</p>
+      <ul class="about-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Structured curriculum from beginner to advanced</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Regular stage performances and recitals</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Classes for kids, teens and adults alike</li>
+      </ul>
+    </div>
+    <div class="about-media reveal">
+      <div class="about-photos">
+        <div class="about-photo-main"></div>
+        <div class="guru-card">
+          <div class="guru-avatar">ST</div>
+          <div class="role">Founder &amp; guru</div>
+          <div class="name">Saruka Tiwari</div>
+          <p>Let's celebrate tradition, express devotion, and dance together.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Testimonials</span>
+      <h2>Loved by our dance families</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card reveal">
+        <span class="quote-mark">&#8220;</span>
+        <p>The discipline and grace my daughter has gained here goes far beyond dance. Guru ji notices every small improvement.</p>
+        <div class="t-person">
+          <div class="t-avatar">RP</div>
+          <div><div class="name">Ritu Pandey</div><div class="role">Parent, Bharatanatyam</div></div>
+        </div>
+      </div>
+      <div class="t-card reveal">
+        <span class="quote-mark">&#8220;</span>
+        <p>Joined the adult Bollywood batch as a complete beginner — three months in, I'm performing on stage. Such a warm space.</p>
+        <div class="t-person">
+          <div class="t-avatar">AK</div>
+          <div><div class="name">Anjali Kapoor</div><div class="role">Student, Bollywood</div></div>
+        </div>
+      </div>
+      <div class="t-card reveal">
+        <span class="quote-mark">&#8220;</span>
+        <p>Small batches mean real attention. My son actually looks forward to class every week — that says everything.</p>
+        <div class="t-person">
+          <div class="t-avatar">VS</div>
+          <div><div class="name">Vikram Sethi</div><div class="role">Parent, Kids batch</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2 style="color:var(--cream-100)">Begin your dance journey today</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg>
+        <div class="k">Call / WhatsApp</div>
+        <div class="v">+91 74281 05644<br>+91 99107 22744</div>
+      </div>
+      <div class="contact-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <div class="k">Email</div>
+        <div class="v">shivshakti.danceacademy83@gmail.com</div>
+      </div>
+      <div class="contact-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="k">Location</div>
+        <div class="v">New Delhi, India</div>
+      </div>
+      <div class="contact-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+        <div class="k">Class timings</div>
+        <div class="v">Mon&ndash;Sat, by appointment</div>
+      </div>
+    </div>
+    <div class="contact-cta reveal">
+      <h3>Let's celebrate tradition together.</h3>
+      <div style="display:flex; gap:20px; align-items:center; flex-wrap:wrap;">
+        <a href="#" class="btn btn-gold">Enroll now</a>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5v5l4.5-2.5Z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Shiv Shakti Dance Academy. All rights reserved. &nbsp;&middot;&nbsp; Where Devotion Meets Expression</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/919811024590" class="whatsapp-fab" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 20.2 12 8.2 8.2 0 0 1 12 20.2Z"/></svg>
+</a>
+
+<a href="tel:+919811024590" class="call-fab" aria-label="Call Admissions">
+  <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('nav.links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => links.classList.remove('open'));
+    });
+  }
+</script>
+
+</body>
+</html>

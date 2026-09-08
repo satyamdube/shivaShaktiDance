@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Rich Warm Metallic Gold Gradient -->
+    <linearGradient id="favGoldGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#fffce8" />
+      <stop offset="25%" stop-color="#f8df8c" />
+      <stop offset="50%" stop-color="#e5ba45" />
+      <stop offset="75%" stop-color="#c59220" />
+      <stop offset="100%" stop-color="#8a5a04" />
+    </linearGradient>
+
+    <linearGradient id="favGoldHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#ffec99" />
+      <stop offset="100%" stop-color="#dca42b" />
+    </linearGradient>
+
+    <!-- Deep Maroon Badge Background -->
+    <radialGradient id="favMaroonBg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#4a0d24" />
+      <stop offset="60%" stop-color="#35081b" />
+      <stop offset="100%" stop-color="#20030f" />
+    </radialGradient>
+
+    <!-- Golden Rim Glow Filter -->
+    <filter id="favGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Circular Badge Backdrop -->
+  <circle cx="64" cy="64" r="61" fill="url(#favMaroonBg)" stroke="url(#favGoldGrad)" stroke-width="2.5" />
+  <circle cx="64" cy="64" r="56" fill="none" stroke="#e5ba45" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.6" />
+
+  <!-- Sacred Golden Trishul & Ghungroos Emblem -->
+  <g transform="translate(14, 10) scale(1)" filter="url(#favGlow)">
+    <!-- Central Flaming Spear Blade -->
+    <path
+      d="M 50,5
+         C 52,14 55.5,23 57.5,31
+         C 59,37 56.5,43 54,47
+         L 46,47
+         C 43.5,43 41,37 42.5,31
+         C 44.5,23 48,14 50,5 Z"
+      fill="url(#favGoldGrad)"
+      stroke="#ffe699"
+      stroke-width="0.6"
+    />
+
+    <!-- Inner flame hollow cutout -->
+    <path
+      d="M 50,15
+         C 52.5,21 53.5,27 52,33
+         C 51,37 49,37 48,33
+         C 46.5,27 47.5,21 50,15 Z"
+      fill="#35081b"
+      stroke="url(#favGoldGrad)"
+      stroke-width="1.2"
+    />
+
+    <!-- Inner flame tongue inside cutout -->
+    <path
+      d="M 50,20
+         C 51.2,23.5 51.5,26.5 50.8,29
+         C 50.3,31 49.7,31 49.2,29
+         C 48.5,26.5 48.8,23.5 50,20 Z"
+      fill="url(#favGoldHighlight)"
+    />
+
+    <!-- Left Prong -->
+    <path
+      d="M 23,12
+         C 25,18 25,24 23.5,31
+         C 21.5,39 16,45 20,53
+         C 23.5,58 31,56 39,50
+         L 43,47
+         C 36,44 29,42 27,37
+         C 24.5,31 25.5,23 27,17
+         C 27.8,14 28,11.5 28.5,8
+         C 26,9 24,10.5 23,12 Z"
+      fill="url(#favGoldGrad)"
+      stroke="#ffe699"
+      stroke-width="0.6"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M 23,12
+         C 17,20 12,32 15,44
+         C 17,52 23,57 32,57
+         C 38,57 43,51 45,47
+         C 41,51 35,53 29,51
+         C 22,48 18,41 18,33
+         C 18,24 21,17 23,12 Z"
+      fill="url(#favGoldHighlight)"
+      opacity="0.85"
+    />
+
+    <!-- Right Prong -->
+    <path
+      d="M 77,12
+         C 75,18 75,24 76.5,31
+         C 78.5,39 84,45 80,53
+         C 76.5,58 69,56 61,50
+         L 57,47
+         C 64,44 71,42 73,37
+         C 75.5,31 74.5,23 73,17
+         C 72.2,14 72,11.5 71.5,8
+         C 74,9 76,10.5 77,12 Z"
+      fill="url(#favGoldGrad)"
+      stroke="#ffe699"
+      stroke-width="0.6"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M 77,12
+         C 83,20 88,32 85,44
+         C 83,52 77,57 68,57
+         C 62,57 57,51 55,47
+         C 59,51 65,53 71,51
+         C 78,48 82,41 82,33
+         C 82,24 79,17 77,12 Z"
+      fill="url(#favGoldHighlight)"
+      opacity="0.85"
+    />
+
+    <!-- Horizontal Crossbar / Collar -->
+    <path
+      d="M 37,47
+         C 41,45 59,45 63,47
+         C 64,49 63,52 61,53
+         C 57,54 43,54 39,53
+         C 37,52 36,49 37,47 Z"
+      fill="url(#favGoldHighlight)"
+      stroke="#8a5a04"
+      stroke-width="0.8"
+    />
+    <line x1="40" y1="50" x2="60" y2="50" stroke="#fffce8" stroke-width="1" stroke-linecap="round" />
+
+    <!-- Center Vertical Shaft -->
+    <rect x="47" y="52" width="6" height="24" rx="1" fill="url(#favGoldGrad)" stroke="#8a5a04" stroke-width="0.6" />
+    <line x1="49.5" y1="53" x2="49.5" y2="75" stroke="#fffce8" stroke-width="1" />
+
+    <!-- Twin Ghungroo Bell Loops -->
+    <g>
+      <circle cx="34" cy="63" r="8" fill="url(#favGoldGrad)" stroke="#ffe699" stroke-width="0.8" />
+      <circle cx="34" cy="63" r="4.2" fill="#35081b" stroke="url(#favGoldGrad)" stroke-width="1.2" />
+      <path d="M 40,60 L 47,60 L 47,66 L 40,66 Z" fill="url(#favGoldGrad)" />
+      <path d="M 32,69 C 34,71 36,70 37,68" stroke="#ffe699" stroke-width="1.2" stroke-linecap="round" />
+    </g>
+
+    <g>
+      <circle cx="66" cy="63" r="8" fill="url(#favGoldGrad)" stroke="#ffe699" stroke-width="0.8" />
+      <circle cx="66" cy="63" r="4.2" fill="#35081b" stroke="url(#favGoldGrad)" stroke-width="1.2" />
+      <path d="M 60,60 L 53,60 L 53,66 L 60,66 Z" fill="url(#favGoldGrad)" />
+      <path d="M 64,69 C 66,71 68,70 69,68" stroke="#ffe699" stroke-width="1.2" stroke-linecap="round" />
+    </g>
+
+    <!-- Shaft Lower Ring / Collar -->
+    <rect x="44" y="74" width="12" height="4" rx="1.5" fill="url(#favGoldHighlight)" stroke="#8a5a04" stroke-width="0.6" />
+
+    <!-- Lower Ornate Ghungroo Bells Cluster -->
+    <!-- Row 1 -->
+    <circle cx="50" cy="84" r="4.5" fill="url(#favGoldGrad)" stroke="#ffe699" stroke-width="0.6" />
+    <circle cx="41" cy="84" r="4" fill="url(#favGoldGrad)" stroke="#ffe699" stroke-width="0.6" />
+    <circle cx="59" cy="84" r="4" fill="url(#favGoldGrad)" stroke="#ffe699" stroke-width="0.6" />
+
+    <!-- Row 2 -->
+    <circle cx="45.5" cy="93" r="4.2" fill="url(#favGoldGrad)" stroke="#ffe699" stroke-width="0.6" />
+    <circle cx="54.5" cy="93" r="4.2" fill="url(#favGoldGrad)" stroke="#ffe699" stroke-width="0.6" />
+
+    <!-- Row 3 - Hanging Drop Bell & Finial -->
+    <circle cx="50" cy="102" r="4.5" fill="url(#favGoldHighlight)" stroke="#ffe699" stroke-width="0.7" />
+    <circle cx="50" cy="103" r="0.9" fill="#fff" />
+    <polygon points="50,108 52,112 48,112" fill="url(#favGoldGrad)" />
+    <circle cx="50" cy="114" r="1.5" fill="url(#favGoldHighlight)" />
+  </g>
+</svg>
