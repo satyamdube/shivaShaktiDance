@@ -4,7 +4,7 @@ import BrandLogo from "@/components/BrandLogo";
 
 export default function Footer() {
   return (
-    <footer className="bg-maroon-950 text-cream-100 border-t border-gold-400/20 pt-16 pb-12">
+    <footer className="bg-maroon-950 text-cream-100 border-t border-gold-400/20 pt-16 pb-20 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gold-400/10">
           {/* Col 1 & 2: Brand */}
@@ -64,6 +64,11 @@ export default function Footer() {
                   Contact & Location
                 </Link>
               </li>
+              <li>
+                <Link href="/terms" className="hover:text-gold-400 transition-colors">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -119,12 +124,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-100/60">
-          <div>
+        <div className="pt-8 px-12 sm:px-20 lg:px-24 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-100/60 text-center sm:text-left">
+          <div className="text-center sm:text-left">
             &copy; {new Date().getFullYear()} Shiv Shakti Dance Academy. All rights reserved.
           </div>
-          <div className="flex items-center gap-2">
-            <span>Next.js 15 &bull; React 19 &bull; App Router &bull; TypeScript</span>
+          <div className="flex items-center justify-center gap-4 text-xs">
+            <Link href="/terms" className="hover:text-gold-300 transition-colors">
+              Terms &amp; Conditions
+            </Link>
+            <span className="text-gold-400/40">&bull;</span>
+            <Link href="/contact" className="hover:text-gold-300 transition-colors">
+              Contact Studio
+            </Link>
           </div>
         </div>
       </div>
