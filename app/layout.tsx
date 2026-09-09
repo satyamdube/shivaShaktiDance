@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import CallFab from "@/components/CallFab";
+import PwaRegister from "@/components/PwaRegister";
+import PwaInstallPrompt from "@/components/PwaInstallPrompt";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
   title: "Shiv Shakti Dance Academy — Where Devotion Meets Expression",
   description:
     "Shiv Shakti Dance Academy, New Delhi — Classical Bharatanatyam, Bollywood & Semi-Classical, Kathak, and Kids Dance training. Where devotion meets expression.",
+  applicationName: "Shiv Shakti Dance",
   keywords: [
     "Dance Academy",
     "Bharatanatyam",
@@ -40,6 +43,12 @@ export const metadata: Metadata = {
     "South Delhi Dance Studio",
     "Next.js React Demo",
   ],
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Shiv Shakti",
+  },
   openGraph: {
     title: "Shiv Shakti Dance Academy — Where Devotion Meets Expression",
     description: "Classical Indian & Contemporary Dance Training in Greater Kailash, New Delhi",
@@ -47,10 +56,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: "/icon.svg",
+    apple: [
+      { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/icon.svg" },
+    ],
     shortcut: "/favicon.svg",
   },
 };
@@ -68,6 +81,8 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFab />
         <CallFab />
+        <PwaRegister />
+        <PwaInstallPrompt />
       </body>
     </html>
   );
